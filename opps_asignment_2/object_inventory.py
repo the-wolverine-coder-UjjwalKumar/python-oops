@@ -821,18 +821,18 @@ def operation_level_hd():
     product_data_file_path = 'products.txt'
     orders_data_file = 'orders.txt'
 
-    # if len(sys.argv) != 3:
-    #     print("Please enter the filename via console to initialize customer and products !!")
-    #     print("Usage: python script.py <file_name1> <file_name2> <file_name3>")
-    #     sys.exit(1)
-    #
-    # # Get the file name from the command line argument
-    # customer_data_file_path = sys.argv[1]
-    # product_data_file_path = sys.argv[2]
-    #
-    # orders_data_file = None
-    # if len(sys.argv) == 4:
-    #     orders_data_file = sys.argv[3]
+    if len(sys.argv) != 3:
+        print("Please enter the filename via console to initialize customer and products !!")
+        print("Usage: python script.py <file_name1> <file_name2> <file_name3>")
+        sys.exit(1)
+
+    # Get the file name from the command line argument
+    customer_data_file_path = sys.argv[1]
+    product_data_file_path = sys.argv[2]
+
+    orders_data_file = None
+    if len(sys.argv) == 4:
+        orders_data_file = sys.argv[3]
 
     if not (os.path.exists(customer_data_file_path) and os.path.exists(product_data_file_path)):
         print("Error: Missing customers.txt or products.txt file.")
@@ -893,7 +893,7 @@ def main():
     # Level 3
     operation_level_di()
     # Level 4
-    # operation_level_hd()
+    operation_level_hd()
 
 
 if __name__ == "__main__":
